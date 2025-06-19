@@ -1,0 +1,197 @@
+/* === СТИЛІ ДЛЯ САЙТУ GYMHELPER === */
+
+:root {
+  --main-color: #00bcd4;
+  --dark-bg: #121212;
+  --light-bg: #f4f4f4;
+  --text-color: #333;
+  --accent: #ff4081;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background: var(--light-bg);
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: var(--dark-bg);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent);
+}
+
+.burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: linear-gradient(135deg, #00bcd4, #2196f3);
+  color: rgb(107, 11, 11);
+  text-align: center;
+  padding: 5rem 1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* === FEATURES === */
+.features, .team, .contacts {
+  padding: 4rem 1rem;
+  background: white;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.features h2, .team h2, .contacts h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--main-color);
+}
+
+.feature-list {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+.feature-list li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.feature-list li::before {
+  content: '\2022';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+/* === TEAM SECTION === */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.member {
+  background: var(--light-bg);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* === CONTACTS === */
+.contacts p {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* === FOOTER === */
+.footer {
+  background: var(--dark-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}

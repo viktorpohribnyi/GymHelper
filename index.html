@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymHelper — Помічник для спортзалу</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    .container { max-width: 1200px; margin: auto; padding: 1rem; }
+    .navbar { background: #222; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+    .navbar .logo { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: #fff; }
+    .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+    .nav-links li a { color: #fff; text-decoration: none; transition: color 0.3s ease; }
+    .nav-links li a:hover { color: #0bf; }
+    .burger { display: none; background: none; border: none; font-size: 2rem; color: #fff; cursor: pointer; }
+    .hero { background: #f4f4f4; padding: 4rem 1rem; text-align: center; }
+    .features, .team, .contacts { padding: 3rem 1rem; background: #fff; }
+    .feature-list { list-style: disc inside; margin-top: 1rem; }
+    .team-members { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .member { background: #eee; padding: 1rem; border-radius: 10px; text-align: center; }
+    .footer { background: #222; color: #fff; text-align: center; padding: 1rem 0; margin-top: 2rem; }
+    @media (max-width: 768px) {
+      .nav-links { flex-direction: column; display: none; background: #333; position: absolute; top: 60px; right: 10px; width: 200px; padding: 1rem; border-radius: 5px; }
+      .nav-links.active { display: flex; }
+      .burger { display: block; }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.getElementById('burger');
+      const navLinks = document.getElementById('navLinks');
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">GymHelper</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Головна</a></li>
+        <li><a href="#features">Функції</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+      <button class="burger" id="burger">&#9776;</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Система-помічник для спортзалу</h1>
+      <p>Облік вправ, контроль ваги та прогресу тренувань</p>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Основні функції</h2>
+      <ul class="feature-list">
+        <li>- Облік виконаних вправ</li>
+        <li>- Збереження змін ваги</li>
+        <li>- Графіки прогресу</li>
+        <li>- Адаптивний інтерфейс</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="container">
+      <h2>Наша команда</h2>
+      <div class="team-members">
+        <div class="member">Погрібний Віктор<br><span>Scrum-мастер / Dev</span></div>
+        <div class="member">Погрібний Віктор 1<br><span>Front-End Dev</span></div>
+        <div class="member">Погрібний Віктор 2<br><span>Back-End Dev</span></div>
+        <div class="member">Погрібний Віктор 3<br><span>QA / Dev</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <h2>Контакти</h2>
+      <p>Пошта: viktor2005402@gmail.com</p>
+      <p>Телефон: +380 96 440 5739</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 GymHelper. Усі права захищено.</p>
+    </div>
+  </footer>
+</body>
+</html>
